@@ -1,0 +1,55 @@
+<!-- importo el header del html que lo tengo en partials -->
+<% include partials/header %>
+
+<!-- importo el navbar que lo tengo en la carpeta partials -->
+<% include partials/navbar %>
+
+<h1>vista de individual Product</h1>
+
+<!-- formulario de registro de un usuario -->
+<div class="container_fluid formulario">
+    <div class="container__centrado">
+        <div class="row formulario__container">
+            <div class="col-12 col-md-6">
+                <h2 class="productos__titulo">Editar Producto</h2>
+                <form action="/products/update/<%= results.id_product %>" method="post">
+                    <div class="form-group">
+                        <input type="text" class="form-control" value="<%= results.id_user %>" name="id_user" />
+
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" value="<%= results.name_product %>"
+                            name="name_product" />
+
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" value="<%= results.brand %>" name="brand" />
+
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" value="<%= results.category %>" name="category" />
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" value="<%= results.description %>" name="description" />
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" value="<%= results.price %>" name="price" />
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" value="<%= results.stock %>" name="stock" />
+                    </div>
+                    <div class="form-group">
+                        <input type="file" name="myFile" value="<%= results.img %>" name="img" />
+                    </div>
+
+                    <button type="submit" class="btn formulario__button">EDITAR</button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<!-- importo el final del html que lo tengo en partials -->
+<% include partials/bottom %>

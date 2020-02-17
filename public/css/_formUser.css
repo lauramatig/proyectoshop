@@ -1,0 +1,25 @@
+.formulario {
+  margin-top: 70px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+.formulario__container {
+  max-width: 800px;
+  margin: auto;
+}
+.formulario__perritos {
+  display: none;
+}
+.formulario__button {
+  background-color: #78b800;
+  border-color: #78b800;
+  color: white;
+  font-weight: bold;
+  max-width: -webkit-max-content;
+  max-width: max-content;
+}
+.formulario__button:hover {
+  background-color: #578500;
+  border-color: #507b00;
+  color: white;
+}

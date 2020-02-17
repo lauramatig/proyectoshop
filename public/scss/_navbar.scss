@@ -1,0 +1,56 @@
+
+//estilos navbar
+.navbar-light .navbar-nav .nav-link {
+    color: black;
+}
+.navbar {
+    padding: 0.5rem 0;
+    justify-content: space-between;
+
+    &__principal {
+        position: fixed;
+        z-index: 999;
+        width: 100%;
+        top: 0;
+        left: 0;
+        box-shadow: 0 0 8px 0 black;
+        background-color: white;
+    }
+
+    &__home-link {
+        display: flex;
+
+    }
+
+    &__logo {
+        width: auto;
+        height: 43px;
+
+        &-texto {
+            font-size: 30px;
+            font-family: 'Cabin', sans-serif;
+            margin-left: 15px;
+        }
+    }
+
+    &__container-lista {
+        width: max-content;
+        flex-grow: unset;
+    }
+
+    &__lista {
+        padding-top: 1rem;
+    }
+
+    &__link {
+        color: black;
+        font-weight: 500;
+        padding: 1rem 1rem;
+    }
+
+    &__iconos {
+        width: 25px;
+        height: auto;
+    }
+
+}

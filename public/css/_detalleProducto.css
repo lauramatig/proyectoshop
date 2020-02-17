@@ -1,0 +1,32 @@
+.detalle__col {
+  justify-content: center;
+  display: flex;
+}
+.detalle__card {
+  flex-direction: column;
+  border: none;
+  justify-content: center;
+}
+.detalle__button {
+  background-color: #78b800;
+  color: white;
+  font-weight: bold;
+  max-width: -webkit-max-content;
+  max-width: max-content;
+}
+.detalle__button:hover {
+  background-color: #578500;
+  border-color: #507b00;
+  color: white;
+}
+.detalle__precio-stock {
+  display: flex;
+  flex-direction: column;
+}
+.detalle__precio {
+  font-weight: bold;
+}
+.detalle__stock {
+  font-style: italic;
+  font-size: 14px;
+}

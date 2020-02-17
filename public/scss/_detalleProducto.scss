@@ -1,0 +1,40 @@
+.detalle {
+    &__col {
+        justify-content: center;
+        display: flex;
+    }
+
+    &__card {
+        flex-direction: column;
+        border: none;
+        justify-content: center;
+    }
+
+    &__button {
+        background-color: #78b800;
+        color: white;
+        font-weight: bold;
+        max-width: max-content;
+        &:hover {
+            background-color: #578500;
+            border-color: #507b00;
+            color: white;
+        }
+    }
+
+    &__precio-stock {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    &__precio {
+        font-weight: bold;
+    }
+
+    &__stock {
+        font-style: italic;
+        font-size: 14px;
+    }
+
+
+}

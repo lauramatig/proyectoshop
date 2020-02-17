@@ -1,0 +1,47 @@
+.footer__container {
+  padding-bottom: 30px;
+  padding-top: 20px;
+  background-color: #232323;
+  color: white;
+}
+.footer__row {
+  margin-bottom: 35px;
+}
+.footer__app {
+  padding: 0 10px;
+}
+.footer__app img {
+  width: auto;
+  height: 40px;
+}
+.footer__titulo {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+.footer__titulo--centrado {
+  text-align: center;
+  width: 100%;
+}
+.footer__lista {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 25px;
+}
+.footer__lista-apps {
+  display: flex;
+  margin: auto;
+}
+.footer__lista-appmobile {
+  flex-direction: column;
+}
+.footer__lista-appmobile .footer__app {
+  margin-bottom: 15px;
+}
+.footer__lista-link {
+  font-size: 14px;
+  padding: 2px 0;
+}
+.footer__contacto {
+  margin-left: 15px;
+}

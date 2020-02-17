@@ -1,0 +1,33 @@
+<!-- importo el header del html que lo tengo en partials -->
+<% include partials/header %>
+
+<!-- importo el navbar que lo tengo en la carpeta partials -->
+<% include partials/navbar %>
+
+<h1>vista de individual user</h1>
+<div class="container-fluid containerPrincipal__user">
+    <div class="row">
+        <!-- usamos el metodo post para enviar los datos y actualizarlos y asi los cambio. -->
+        <form action="/users/update/<%= results.id_user %>" method="post">
+            <div class="form-group">
+                <input type="text" value="<%= results.name %>" name="name" />
+            </div>
+            <div class="form-group">
+                <input type="text" value="<%= results.lastname %>" name="lastname" />
+            </div>
+            <div class="form-group">
+                <input type="email" value="<%= results.email %>" name="email" />
+            </div>
+            <div class="form-group">
+                <input type="password" value="<%= results.password %>" name="password" />
+            </div>
+            <div class="form-group">
+                <input type="text" value="<%= results.is_admin %>" name="is_admin" />
+            </div>
+            <input type="submit" value="submit" />
+        </form>
+    </div>
+</div>
+
+<!-- importo el final del html que lo tengo en partials -->
+<% include partials/bottom %>

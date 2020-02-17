@@ -1,0 +1,40 @@
+<!-- importo el header del html que lo tengo en partials -->
+<% include partials/header %>
+
+
+<!-- importo el navbar que lo tengo en la carpeta partials -->
+<% include partials/navbar %>
+
+
+<!-- lista de productos -->
+<div class="container-fluid productos detalle">
+    <div class="container__centrado">
+        <h2 class="productos__titulo">Detalle Artículo</h2>
+        <div class="row productos__row detalle__row">
+            <div class="col-12 detalle__col">
+                <div class="card detalle__card">
+                    <div class="detalle__img-container">
+                        <img src="/uploads/<%= data.img %>" class="detalle__img" alt="...">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title"><%= data.name_product %></h5>
+                        <p class="card-text"><%= data.description %></p>
+                        <p class="card-text"><%= data.brand %></p>
+                        <p class="card-text detalle__precio-stock"><span class="detalle__precio"> Precio Und:
+                                <%= data.price %> €</span>
+                            <span class="detalle__stock"> (Unidades disponibles: <%= data.stock %>)</span>
+                        </p>
+                        <a href="#" class="btn detalle__button">¡AÑADIR AL CARRITO!</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- importo el footer que lo tengo en la carpeta partials -->
+<% include partials/footer %>
+
+<!-- importo el final del html que lo tengo en partials -->
+<% include partials/bottom %>

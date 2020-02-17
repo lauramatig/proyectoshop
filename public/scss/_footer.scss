@@ -1,0 +1,60 @@
+.footer {
+    &__container {
+        padding-bottom: 30px;
+        padding-top: 20px;
+        background-color: #232323;
+        color: white;
+    }
+
+    &__row {
+        margin-bottom: 35px;
+    }
+
+    &__app {
+        padding: 0 10px;
+        img{
+            width: auto;
+            height: 40px;
+        }
+    }
+
+    &__titulo {
+        font-size: 16px;
+        margin-bottom: 20px;
+
+        &--centrado {
+            text-align: center;
+            width: 100%;
+        }
+    }
+
+    &__lista {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        margin-bottom: 25px;
+
+        &-apps {
+            display: flex;
+            margin: auto;
+
+        }
+        &-appmobile {
+            flex-direction: column;
+        }
+
+        &-appmobile .footer__app {
+            margin-bottom: 15px;
+        }
+    }
+
+    &__lista-link {
+        font-size: 14px;
+        padding: 2px 0;
+    }
+
+    &__contacto {
+        margin-left: 15px;
+    }
+
+}

@@ -1,0 +1,34 @@
+//fuentes de letras
+@import url('https://fonts.googleapis.com/css?family=Odibee+Sans&display=swap');
+
+// anexo el documento donde defino las variables.
+@import './variable.scss';
+
+
+// anexo el documento donde defino los mixin.
+@import './mixin.scss';
+
+//estilos generales
+@import './globals.scss';
+
+//estilos de navbar
+@import './navbar.scss';
+
+//pagina principal
+@import './home.scss';
+
+//pagina principal
+@import './productos.scss';
+
+//pagina principal
+@import './detalleProducto.scss';
+
+//pagina principal
+@import './formUser.scss';
+
+//pagina principal
+@import './footer.scss';
+
+
+//importamos el fichero donde tenemos las querys.
+@import './query.scss';

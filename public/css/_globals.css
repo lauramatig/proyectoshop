@@ -1,0 +1,26 @@
+body {
+  background-color: white;
+}
+
+.row--sin-margin {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.col--no-padding {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+* {
+  font-family: "Cabin", sans-serif;
+}
+
+.container__centrado {
+  max-width: 1060px;
+  margin: auto;
+}
+
+.mayusculas {
+  text-transform: capitalize;
+}

@@ -1,0 +1,346 @@
+@import url("https://fonts.googleapis.com/css?family=Odibee+Sans&display=swap");
+body {
+  background-color: white;
+}
+
+.row--sin-margin {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.col--no-padding {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+* {
+  font-family: "Cabin", sans-serif;
+}
+
+.container__centrado {
+  max-width: 1060px;
+  margin: auto;
+}
+
+.mayusculas {
+  text-transform: capitalize;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: black;
+}
+
+.navbar {
+  padding: 0.5rem 0;
+  justify-content: space-between;
+}
+.navbar__principal {
+  position: fixed;
+  z-index: 999;
+  width: 100%;
+  top: 0;
+  left: 0;
+  box-shadow: 0 0 8px 0 black;
+  background-color: white;
+}
+.navbar__home-link {
+  display: flex;
+}
+.navbar__logo {
+  width: auto;
+  height: 43px;
+}
+.navbar__logo-texto {
+  font-size: 30px;
+  font-family: "Cabin", sans-serif;
+  margin-left: 15px;
+}
+.navbar__container-lista {
+  width: -webkit-max-content;
+  width: max-content;
+  flex-grow: unset;
+}
+.navbar__lista {
+  padding-top: 1rem;
+}
+.navbar__link {
+  color: black;
+  font-weight: 500;
+  padding: 1rem 1rem;
+}
+.navbar__iconos {
+  width: 25px;
+  height: auto;
+}
+
+.dogs__container {
+  background-image: url("../images/yorkshire_background.jpg");
+  background-size: cover;
+  background-position: center;
+  padding-top: 250px;
+  padding-bottom: 250px;
+  margin-top: 70px;
+}
+.dogs__title, .dogs__subtitle, .dogs__link {
+  color: white;
+  text-shadow: 1px 1px black;
+}
+.dogs__subtitle {
+  margin-bottom: 15px;
+}
+.dogs__link {
+  cursor: pointer;
+  padding: 10px 0;
+  margin-top: 16px;
+}
+.dogs__link:hover {
+  color: #cccccc;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.registro__container {
+  background-color: #555;
+  color: white;
+  padding-top: 35px;
+  padding-bottom: 35px;
+}
+.registro__button {
+  background-color: #78b800;
+  color: white;
+  font-weight: bold;
+  max-width: -webkit-max-content;
+  max-width: max-content;
+}
+.registro__button:hover {
+  background-color: #578500;
+  border-color: #507b00;
+  color: white;
+}
+.registro__row {
+  flex-direction: column;
+  align-items: center;
+}
+.registro__titulo {
+  max-width: 500px;
+  margin: auto;
+  margin-bottom: 20px;
+  font-size: 20px;
+  font-weight: normal;
+  text-align: center;
+  line-height: 27px;
+}
+
+.productos {
+  margin-top: 70px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+.productos__titulo {
+  width: 100%;
+  border-bottom: 1px solid #cccccc;
+  margin-bottom: 40px;
+  padding-bottom: 10px;
+}
+.productos__col {
+  margin-bottom: 30px;
+}
+.productos__card {
+  border: none;
+}
+.productos__card-link:hover {
+  text-decoration: none;
+}
+.productos__card-link:hover .productos__overlay {
+  display: flex;
+}
+.productos .card-img-top {
+  position: relative;
+}
+.productos__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+.productos__img {
+  height: 100%;
+  width: 100%;
+}
+.productos__descripcion {
+  color: black;
+  font-weight: bold;
+}
+.productos__price {
+  display: flex;
+  width: -webkit-max-content;
+  width: max-content;
+  padding: 5px 10px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background: white;
+  box-shadow: 0 0 5px 0 black;
+  color: black;
+  font-weight: bold;
+}
+.productos__error {
+  font-size: 19px;
+  font-weight: normal;
+}
+
+.detalle__col {
+  justify-content: center;
+  display: flex;
+}
+.detalle__card {
+  flex-direction: column;
+  border: none;
+  justify-content: center;
+}
+.detalle__button {
+  background-color: #78b800;
+  color: white;
+  font-weight: bold;
+  max-width: -webkit-max-content;
+  max-width: max-content;
+}
+.detalle__button:hover {
+  background-color: #578500;
+  border-color: #507b00;
+  color: white;
+}
+.detalle__precio-stock {
+  display: flex;
+  flex-direction: column;
+}
+.detalle__precio {
+  font-weight: bold;
+}
+.detalle__stock {
+  font-style: italic;
+  font-size: 14px;
+}
+
+.formulario {
+  margin-top: 70px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+.formulario__container {
+  max-width: 800px;
+  margin: auto;
+  justify-content: center;
+}
+.formulario__perritos {
+  display: none;
+}
+.formulario__button {
+  background-color: #78b800;
+  border-color: #78b800;
+  color: white;
+  font-weight: bold;
+  max-width: -webkit-max-content;
+  max-width: max-content;
+}
+.formulario__button:hover {
+  background-color: #578500;
+  border-color: #507b00;
+  color: white;
+}
+
+.footer__container {
+  padding-bottom: 30px;
+  padding-top: 20px;
+  background-color: #232323;
+  color: white;
+}
+.footer__row {
+  margin-bottom: 35px;
+}
+.footer__app {
+  padding: 0 10px;
+}
+.footer__app img {
+  width: auto;
+  height: 40px;
+}
+.footer__titulo {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+.footer__titulo--centrado {
+  text-align: center;
+  width: 100%;
+}
+.footer__lista {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 25px;
+}
+.footer__lista-apps {
+  display: flex;
+  margin: auto;
+}
+.footer__lista-appmobile {
+  flex-direction: column;
+}
+.footer__lista-appmobile .footer__app {
+  margin-bottom: 15px;
+}
+.footer__lista-link {
+  font-size: 14px;
+  padding: 2px 0;
+}
+.footer__contacto {
+  margin-left: 15px;
+}
+
+@media screen and (min-width: 769px) {
+  .navbar {
+    padding: 0.5rem 1rem;
+  }
+  .navbar__lista {
+    padding-top: 0;
+  }
+  .navbar__link {
+    padding: 0.5rem 1rem;
+  }
+
+  .dogs__container {
+    background-image: url("../images/yorkshire_background_desktop.jpg");
+  }
+
+  .detalle {
+    margin-bottom: 130px;
+  }
+  .detalle__card {
+    flex-direction: row;
+    border: none;
+    justify-content: center;
+  }
+  .detalle__row {
+    margin-top: 85px;
+  }
+
+  .formulario__perritos {
+    display: flex;
+    background-image: url("../images/login_imagen.jpg");
+    background-size: cover;
+    background-position: center;
+  }
+
+  .footer__lista-appmobile {
+    flex-direction: row;
+  }
+  .footer__lista-appmobile .footer__app {
+    margin-bottom: 0;
+  }
+}

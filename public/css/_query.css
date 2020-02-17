@@ -1,0 +1,41 @@
+@media screen and (min-width: 769px) {
+  .navbar {
+    padding: 0.5rem 1rem;
+  }
+  .navbar__lista {
+    padding-top: 0;
+  }
+  .navbar__link {
+    padding: 0.5rem 1rem;
+  }
+
+  .dogs__container {
+    background-image: url("../images/yorkshire_background_desktop.jpg");
+  }
+
+  .detalle {
+    margin-bottom: 130px;
+  }
+  .detalle__card {
+    flex-direction: row;
+    border: none;
+    justify-content: center;
+  }
+  .detalle__row {
+    margin-top: 85px;
+  }
+
+  .formulario__perritos {
+    display: flex;
+    background-image: url("../images/login_imagen.jpg");
+    background-size: cover;
+    background-position: center;
+  }
+
+  .footer__lista-appmobile {
+    flex-direction: row;
+  }
+  .footer__lista-appmobile .footer__app {
+    margin-bottom: 0;
+  }
+}

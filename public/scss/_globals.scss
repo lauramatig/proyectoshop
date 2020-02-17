@@ -1,0 +1,31 @@
+// Estilos generales
+body{
+    background-color: white;
+}
+
+.row--sin-margin {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.col--no-padding {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+//para cualquier cosa del html esa fuente de letra
+* {
+     font-family: 'Cabin', sans-serif;
+ }
+
+.container {
+    &__centrado {
+        max-width: 1060px;
+        margin: auto;
+    }
+}
+
+//pongo las primeras letras de cada categoria en mayuscula
+.mayusculas {
+    text-transform: capitalize;
+}

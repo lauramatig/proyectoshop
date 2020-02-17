@@ -1,0 +1,57 @@
+.dogs__container {
+  background-image: url("../images/yorkshire_background.jpg");
+  background-size: cover;
+  background-position: center;
+  padding-top: 250px;
+  padding-bottom: 250px;
+  margin-top: 70px;
+}
+.dogs__title, .dogs__subtitle, .dogs__link {
+  color: white;
+  text-shadow: 1px 1px black;
+}
+.dogs__subtitle {
+  margin-bottom: 15px;
+}
+.dogs__link {
+  cursor: pointer;
+  padding: 10px 0;
+  margin-top: 16px;
+}
+.dogs__link:hover {
+  color: #cccccc;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.registro__container {
+  background-color: #555;
+  color: white;
+  padding-top: 35px;
+  padding-bottom: 35px;
+}
+.registro__button {
+  background-color: #78b800;
+  color: white;
+  font-weight: bold;
+  max-width: -webkit-max-content;
+  max-width: max-content;
+}
+.registro__button:hover {
+  background-color: #578500;
+  border-color: #507b00;
+  color: white;
+}
+.registro__row {
+  flex-direction: column;
+  align-items: center;
+}
+.registro__titulo {
+  max-width: 500px;
+  margin: auto;
+  margin-bottom: 20px;
+  font-size: 20px;
+  font-weight: normal;
+  text-align: center;
+  line-height: 27px;
+}

@@ -1,0 +1,46 @@
+.navbar-light .navbar-nav .nav-link {
+  color: black;
+}
+
+.navbar {
+  padding: 0.5rem 0;
+  justify-content: space-between;
+}
+.navbar__principal {
+  position: fixed;
+  z-index: 999;
+  width: 100%;
+  top: 0;
+  left: 0;
+  box-shadow: 0 0 8px 0 black;
+  background-color: white;
+}
+.navbar__home-link {
+  display: flex;
+}
+.navbar__logo {
+  width: auto;
+  height: 43px;
+}
+.navbar__logo-texto {
+  font-size: 30px;
+  font-family: "Cabin", sans-serif;
+  margin-left: 15px;
+}
+.navbar__container-lista {
+  width: -webkit-max-content;
+  width: max-content;
+  flex-grow: unset;
+}
+.navbar__lista {
+  padding-top: 1rem;
+}
+.navbar__link {
+  color: black;
+  font-weight: 500;
+  padding: 1rem 1rem;
+}
+.navbar__iconos {
+  width: 25px;
+  height: auto;
+}
