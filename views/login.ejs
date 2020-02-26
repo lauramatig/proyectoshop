@@ -1,0 +1,33 @@
+<!-- importo el header del html que lo tengo en partials -->
+<% include partials/header %>
+
+<!-- importo el navbar que lo tengo en la carpeta partials -->
+<% include partials/navbar %>
+
+
+<!-- formulario de registro de un usuario -->
+<div class="container-fluid login">
+    <div class="row login__container">
+        <div class="login__col">
+            <h2 class="login__titulo">Login</h2>
+            <form class="login__principal" action="/login" method="post">
+
+                <div class="form-group">
+                    <input type="email" class="form-control" name="email" placeholder="email">
+
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control" name="password" placeholder="password">
+                </div>
+                <button type="submit" class="btn login__button">ENVIAR</button>
+            </form>
+            <% if (error != "") { %>
+            <p class="text-danger"><%= error %></p>
+            <% } %>
+        </div>
+    </div>
+</div>
+
+
+<!-- importo el final del html que lo tengo en partials -->
+<% include partials/bottom %>

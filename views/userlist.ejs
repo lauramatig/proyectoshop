@@ -1,0 +1,43 @@
+<!-- importo el header del html que lo tengo en partials -->
+<% include partials/header %>
+
+<!-- importo el navbar que lo tengo en la carpeta partials -->
+<% include partials/navbar %>
+
+<!-- lista de usuarios -->
+<div class="container-fluid tabla__usuarios">
+    <div class="container__centrado">
+        <div class="row tabla__row">
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 tabla__col">
+                <table class="tabla">
+                    <th class="tabla__campos">id_user</th>
+                    <th class="tabla__campos">name</th>
+                    <th class="tabla__campos">lastname</th>
+                    <th class="tabla__campos">email</th>
+                    <th class="tabla__campos">password</th>
+                    <th class="tabla__campos">is_admin</th>
+                    <th class="tabla__campos">ELIMINAR</th>
+                    <th class="tabla__campos">EDITAR</th>
+                    <% if (data.length > 0) { data.forEach (data => {%>
+                    <tr class="tabla__registros">
+                        <td class="tabla__registros-textos"><strong><%= data.id_user %></strong></td>
+                        <td class="tabla__registros-textos"><strong><%= data.name %></strong></td>
+                        <td class="tabla__registros-textos"><strong><%= data.lastname %></strong></td>
+                        <td class="tabla__registros-textos"><strong><%= data.email %></strong></td>
+                        <td class="tabla__registros-textos"><strong><%= data.password%></strong></td>
+                        <td class="tabla__registros-textos"><strong><%= data.is_admin%></strong></td>
+                        <td class="tabla__registros-textos"><a class="btn btn-danger"
+                                href="/users/delete/<%= data.id_user %>">Eliminar</a></td>
+                        <td class="tabla__registros-textos"><a class="btn btn-primary"
+                                href="/users/edit/<%= data.id_user %>">Editar</a></td>
+
+                    </tr>
+                    <%}); }%>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- importo el final del html que lo tengo en partials -->
+<% include partials/bottom %>

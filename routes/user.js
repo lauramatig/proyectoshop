@@ -6,10 +6,20 @@ const connection = require("../config/db.js");
 // Ruta para ver TODOS los usuarios
 router.get("/", function (req, res, next) {
     connection.query("SELECT * FROM user", (err, data) => {
+        //recupero si hay alguien logueado, este o no este envio esos valores por defecto
+        let is_admin = "0";
+        let user = {};
+        if (req.session.is_admin) {
+            is_admin = req.session.is_admin;
+        }
+
+        if (req.session.user) {
+            user = req.session.user;
+        }
         if (err) {
             throw err;
         } else {
-            res.render("usersList", { data: data });
+            res.render("userlist", { data: data, is_admin: is_admin, user: user });
         }
         console.log(data);
     });
@@ -17,7 +27,17 @@ router.get("/", function (req, res, next) {
 
 // Ruta para MOSTRAR (solo mostrar) el formulario de añadir usuario
 router.get("/add", function (req, res, next) {
-    res.render("addUser");
+    //recupero si hay alguien logueado, este o no este envio esos valores por defecto
+    let is_admin = "0";
+    let user = {};
+    if (req.session.is_admin) {
+        is_admin = req.session.is_admin;
+    }
+
+    if (req.session.user) {
+        user = req.session.user;
+    }
+    res.render("addUser", { is_admin: is_admin, user: user });
 });
 
 
@@ -31,6 +51,14 @@ router.post("/add", function (req, res) {
     let password = req.body.password;
     let is_admin = req.body.is_admin;
 
+    if (is_admin == "on") {
+        is_admin = "1";
+    }
+    else {
+        is_admin = "0"
+    }
+
+    console.log("el admin es-->", is_admin);
     connection.query(
         "INSERT INTO user set? ",
         { name, lastname, email, password, is_admin }, (err, result) => {
@@ -56,9 +84,19 @@ router.get("/delete/:id_user", (req, res) => {
 router.get("/edit/:id_user", function (req, res) {
     console.log(req.params.id_user);
     let id_user = req.params.id_user;
+    //recupero si hay alguien logueado, este o no este envio esos valores por defecto
+    let is_admin = "0";
+    let user = {};
+    if (req.session.is_admin) {
+        is_admin = req.session.is_admin;
+    }
+
+    if (req.session.user) {
+        user = req.session.user;
+    }
     connection.query(
         "SELECT * FROM user WHERE id_user = ?", [id_user], (err, results) => {
-            res.render("editUser", { results: results[0] });
+            res.render("editUser", { results: results[0], is_admin: is_admin, user: user });
             console.log(results);
         });
 });

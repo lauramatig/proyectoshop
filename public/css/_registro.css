@@ -1,0 +1,57 @@
+.registrousuario {
+  height: 100vh;
+  background: #b4e391;
+  background: linear-gradient(135deg, #b4e391 0%, #78b800 51%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#b4e391", endColorstr="#78b800",GradientType=1 );
+  align-items: center;
+  display: flex;
+}
+.registrousuario__container {
+  max-width: 800px;
+  margin: auto;
+  justify-content: center;
+}
+.registrousuario__col {
+  background-color: white;
+  padding: 25px 25px;
+  margin-top: 40px;
+  min-width: 320px;
+  position: relative;
+  animation: aparecer 1s, ascender 1s ease-out;
+}
+.registrousuario__button {
+  background-color: #78b800;
+  border-color: #78b800;
+  color: white;
+  font-weight: bold;
+  width: 100%;
+}
+.registrousuario__button:hover {
+  background-color: #578500;
+  border-color: #507b00;
+  color: white;
+}
+.registrousuario__titulo {
+  text-align: center;
+  border-bottom: 1px solid #cccccc;
+  padding-bottom: 10px;
+  margin-bottom: 30px;
+  font-size: 20px;
+}
+
+@keyframes aparecer {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes ascender {
+  from {
+    top: 30px;
+  }
+  to {
+    top: 0;
+  }
+}

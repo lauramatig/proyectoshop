@@ -17,14 +17,29 @@
 //pagina principal
 @import './home.scss';
 
-//pagina principal
+//pagina productos
 @import './productos.scss';
 
-//pagina principal
+//pagina detalle de un producto
 @import './detalleProducto.scss';
 
-//pagina principal
+//pagina formulario de registro
+@import './registro.scss';
+
+//pagina formulario añadir producto
+@import './addproduct.scss';
+
+//pagina formulario editar un producto
+@import './editproduct.scss';
+
+//pagina formulario editar un usuario
 @import './formUser.scss';
+
+//pagina de login
+@import './login.scss';
+
+//pagina listado de usuarios que hay en bbdd
+@import './userlist.scss';
 
 //pagina principal
 @import './footer.scss';

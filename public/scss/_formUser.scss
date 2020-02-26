@@ -1,16 +1,24 @@
-.formulario {
+.edituser {
     margin-top: 70px;
     padding-top: 40px;
     padding-bottom: 40px;
+
+    height: 100vh;
+    background: #b4e391;
+    background: -moz-linear-gradient(-45deg,  #b4e391 0%, #78b800 51%);
+    background: -webkit-linear-gradient(-45deg,  #b4e391 0%,#78b800 51%);
+    background: linear-gradient(135deg,  #b4e391 0%,#78b800 51%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b4e391', endColorstr='#78b800',GradientType=1 );
+
+    align-items: center;
+    display: flex;
+
+
 
     &__container {
         max-width: 800px;
         margin: auto;
         justify-content: center;
-    }
-
-    &__perritos {
-        display: none;
     }
 
     &__button {
@@ -25,6 +33,25 @@
             color: white;
         }
     }
-     
+
+    &__col {
+        padding: 25px 25px;
+        min-width: 320px; 
+        background-color: #ffffff47;
+        
+    }
+    &__titulo {
+        text-align: center;
+        border-bottom: 1px solid #cccccc;
+        padding-bottom: 10px;
+        margin-bottom: 30px;
+    }
+
+
+    &__texto {
+        background: none;
+        border: none;
+        border-bottom: 1px solid #cccccc;
+    }
 
 }

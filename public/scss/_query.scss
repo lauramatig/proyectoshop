@@ -32,10 +32,20 @@
     .formulario {
         &__perritos {
             display: flex;
-            background-image: url('../images/login_imagen.jpg');
+            background-image: url('../images/yorkshire.png');
+            background-size: cover;
+            background-position:center;
+            height: 79vh;
+        }
+
+        &__login {
+            display: flex;
+            background-image: url('../images/login-perro.jpg');
             background-size: cover;
             background-position:center;
         }
+
+        
     }
 
     .footer {

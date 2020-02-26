@@ -6,12 +6,12 @@
 
 
 <!-- formulario de registro de un producto -->
-<div class="container_fluid formulario">
+<div class="container-fluid addproduct">
     <div class="container__centrado">
-        <div class="row formulario__container">
-            <div class="col-12 col-md-6">
-                <h2 class="productos__titulo">Añade Productos</h2>
-                <form class="formulario__principal" action="/products/add" method="post" enctype="multipart/form-data">
+        <div class="row addproduct__container">
+            <div class="addproduct__col">
+                <h2 class="addproduct__titulo">Añade Productos</h2>
+                <form class="addproduct__principal" action="/products/add" method="post" enctype="multipart/form-data">
                     <div class="form-group">
                         <input type="text" class="form-control" name="id_user" placeholder="id_user">
 
@@ -43,7 +43,7 @@
                     <div class="form-group">
                         <input type="file" name="myFile" />
                     </div>
-                    <button type="submit" class="btn formulario__button">AÑADIR</button>
+                    <button type="submit" class="btn addproduct__button">AÑADIR</button>
                 </form>
             </div>
         </div>

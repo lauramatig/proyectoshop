@@ -1,0 +1,22 @@
+.addproduct__container {
+  max-width: 800px;
+  margin: auto;
+  justify-content: center;
+}
+.addproduct__button {
+  background-color: #78b800;
+  border-color: #78b800;
+  color: white;
+  font-weight: bold;
+  max-width: -webkit-max-content;
+  max-width: max-content;
+}
+.addproduct__button:hover {
+  background-color: #578500;
+  border-color: #507b00;
+  color: white;
+}
+
+.productos__titulo {
+  text-align: center;
+}

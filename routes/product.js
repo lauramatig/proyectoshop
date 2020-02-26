@@ -17,27 +17,27 @@ var storage = multer.diskStorage({
 //lo que recibimos de ese storage lo pasamos a una variable para poder a utilizarlo
 var upload = multer({ storage: storage });
 
-//cuando envio un formulario con un post
-//single es porque se suben las imagenes de una en una no se suben por ejemplo dos a la vez
-//myFile es el nombre que le he dado al inpunt del post
-// router.post("/", upload.single("myFile"), function (req, res, next) {
-//     let img = req.file.originalname;
-//     console.log("holaaaaaaa", req.file.originalname);
-
-//     connection.query(
-//         "INSERT INTO `product` (img) VALUES ('" + img + "')", (error, results) => {
-//             console.log("errrrror", error);
-//             res.redirect("/products");
-//         });
-// });
 
 //para HACER SELECT QUE ME SACA LA PANTALLA DE TODOS LOS ARTICULOS
 router.get("/", function (req, res, next) {
     let sql = "SELECT * FROM product";
     connection.query(sql, (error, data) => {
-        res.render("products", { data: data });
+        //recupero si hay alguien logueado, este o no este envio esos valores por defecto
+        let is_admin = "0";
+        let user = {};
+        if (req.session.is_admin) {
+            is_admin = req.session.is_admin;
+        }
+
+        if (req.session.user) {
+            user = req.session.user;
+        }
+        //le envio category porque el siempre me va a pedir category
+        res.render("products", { data: data, category: "", is_admin: is_admin, user: user });
+
     });
 });
+
 
 //para HACER SELECT QUE ME SACA CADA CATEGORIA
 router.get("/category/:category", function (req, res, next) {
@@ -45,17 +45,38 @@ router.get("/category/:category", function (req, res, next) {
     console.log(req.params.category);
     let sql = "SELECT * FROM product WHERE category = ?";
     connection.query(sql, [category], (error, data) => {
-        res.render("products", { data: data, category: category });
+        //recupero si hay alguien logueado, este o no este envio esos valores por defecto
+        let is_admin = "0";
+        let user = {};
+        if (req.session.is_admin) {
+            is_admin = req.session.is_admin;
+        }
+
+        if (req.session.user) {
+            user = req.session.user;
+        }
+        res.render("products", { data: data, category: category, is_admin: is_admin, user: user });
+
     });
 });
 
 //para mostrar el formulario de añadir un articulo
 router.get("/add", function (req, res, next) {
-    res.render("addProduct");
+    //recupero si hay alguien logueado, este o no este envio esos valores por defecto
+    let is_admin = "0";
+    let user = {};
+    if (req.session.is_admin) {
+        is_admin = req.session.is_admin;
+    }
+
+    if (req.session.user) {
+        user = req.session.user;
+    }
+    res.render("addProduct", { is_admin: is_admin, user: user });
 });
 
 
-//para INSERTAR
+//para INSERTAR productos
 router.post("/add", upload.single("myFile"), function (req, res, next) {
     //campos de product
     let id_user = req.body.id_user;
@@ -65,6 +86,9 @@ router.post("/add", upload.single("myFile"), function (req, res, next) {
     let description = req.body.description;
     let price = req.body.price;
     let stock = req.body.stock;
+    //si no subo ninguna imagen ya que el campo de imagen no viene relleno como el resto de campos
+    //en req.file -> informacion de la imagen en general
+    //req.file.originalname -> nombre de la imagen
     let img = "";
     if (req.file && req.file.originalname) {
         img = req.file.originalname;
@@ -88,11 +112,21 @@ router.get("/delete/:id_product", function (req, res) {
 
 //para EDITAR
 router.get("/edit/:id_product", function (req, res) {
+    //recupero si hay alguien logueado, este o no este envio esos valores por defecto
+    let is_admin = "0";
+    let user = {};
+    if (req.session.is_admin) {
+        is_admin = req.session.is_admin;
+    }
+
+    if (req.session.user) {
+        user = req.session.user;
+    }
     let id = req.params.id_product;
     connection.query(
         "SELECT * FROM product WHERE id_product = ?", [id], (err, results) => {
-            res.render("editProduct", { results: results[0] });
-
+            res.render("editProduct", { results: results[0], is_admin: is_admin, user: user });
+            console.log(results);
         }
     );
 });
@@ -100,15 +134,24 @@ router.get("/edit/:id_product", function (req, res) {
 //para DETALLE para ver un unico producto
 router.get("/view/:id_product", function (req, res) {
     let id = req.params.id_product;
+    let is_admin = "0";
+    let user = {};
+    if (req.session.is_admin) {
+        is_admin = req.session.is_admin;
+    }
+
+    if (req.session.user) {
+        user = req.session.user;
+    }
     connection.query(
         "SELECT * FROM product WHERE id_product = ?", [id], (err, results) => {
-            res.render("productDetails", { data: results[0] });
+            res.render("productDetails", { data: results[0], is_admin: is_admin, user: user });
         }
     );
 });
 
 //para CUANDO MODIFICO LOS DATOS POST PARA ENVIARLOS.
-router.post("/update/:id_product", function (req, res) {
+router.post("/update/:id_product", upload.single("myFile"), function (req, res) {
     let id = req.params.id_product;
     let id_user = req.body.id_user;
     let name_product = req.body.name_product;
@@ -117,9 +160,15 @@ router.post("/update/:id_product", function (req, res) {
     let description = req.body.description;
     let price = req.body.price;
     let stock = req.body.stock;
+    let img = "";
+    if (req.file && req.file.originalname) {
+        img = req.file.originalname;
+    }
+
+    console.log(req.body)
     connection.query(
         "UPDATE product set? WHERE id_product = " + id,
-        { id_user, name_product, brand, category, description, price, stock },
+        { id_user, name_product, brand, category, description, price, stock, img },
         (err, results) => {
             res.redirect("/products");
         }
